@@ -9,7 +9,7 @@
     {
       "name": "spellbook",
       "description": "Pipeline completo de desenvolvimento: brainstorm, planejamento, execução com subagentes e revisão de código.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": "./spellbook/",
       "author": {
         "name": "Lucas Martins",
@@ -19,7 +19,7 @@
     {
       "name": "powertools",
       "description": "Coleção de skills utilitárias para produtividade no dia a dia do desenvolvedor.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": "./powertools/",
       "author": {
         "name": "Lucas Martins",
