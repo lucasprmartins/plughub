@@ -2,7 +2,7 @@
 
 <img src="https://cdn.simpleicons.org/claude" alt="Claude" width="80" />
 
-# Plughub
+# Beta Plugins
 
 **Coleção de plugins com skills, agentes e comandos para Claude Code.**
 
@@ -14,11 +14,11 @@
 
 ## Sobre
 
-Plughub é um ecossistema de plugins para [Claude Code](https://github.com/anthropics/claude-code) que oferece um pipeline completo de desenvolvimento — da ideação à revisão de código — através de skills orquestradas e subagentes especializados.
+Beta Plugins é um ecossistema de plugins para [Claude Code](https://github.com/anthropics/claude-code) que oferece um pipeline completo de desenvolvimento — da ideação à revisão de código — através de skills orquestradas e subagentes especializados.
 
 ## Plugins
 
-### Spellbook
+### Workflow
 
 Pipeline completo de desenvolvimento com orquestração de subagentes.
 
@@ -37,7 +37,7 @@ Pipeline completo de desenvolvimento com orquestração de subagentes.
 | `reviewer` | Executa verificações técnicas e revisão de código |
 | `fixer` | Aplica correções cirúrgicas nos problemas encontrados |
 
-### Powertools
+### Essentials
 
 Utilitários de produtividade para o dia a dia.
 
@@ -56,8 +56,8 @@ Utilitários de produtividade para o dia a dia.
 ### Adicionar via CLI
 
 ```bash
-claude plugins:add /caminho/para/plughub/spellbook
-claude plugins:add /caminho/para/plughub/powertools
+claude plugins:add /caminho/para/beta-plugins/workflow
+claude plugins:add /caminho/para/beta-plugins/essentials
 ```
 
 ### Adicionar manualmente
@@ -67,8 +67,8 @@ Adicione os caminhos dos plugins no seu arquivo de configuração do Claude Code
 ```json
 {
   "plugins": [
-    "/caminho/para/plughub/spellbook",
-    "/caminho/para/plughub/powertools"
+    "/caminho/para/beta-plugins/workflow",
+    "/caminho/para/beta-plugins/essentials"
   ]
 }
 ```
@@ -87,7 +87,7 @@ Ideia → /brainstorm → /plan → /execute → /review → /commit → /pr
 /brainstorm Quero criar um sistema de autenticação com OAuth
 ```
 
-O brainstorm gera uma especificação em `.spellbook/specs/`.
+O brainstorm gera uma especificação em `.workflow/specs/`.
 
 #### 2. Planejar a implementação
 
@@ -95,7 +95,7 @@ O brainstorm gera uma especificação em `.spellbook/specs/`.
 /plan
 ```
 
-Converte a especificação em tarefas atômicas salvas em `.spellbook/plans/`.
+Converte a especificação em tarefas atômicas salvas em `.workflow/plans/`.
 
 #### 3. Executar as tarefas
 
@@ -122,7 +122,7 @@ Despacha `reviewer` para verificação técnica e `fixer` para correções autom
 
 ### Skills independentes
 
-As skills do Powertools podem ser usadas de forma independente a qualquer momento:
+As skills do Essentials podem ser usadas de forma independente a qualquer momento:
 
 ```
 /commit          # Commit atômico das mudanças atuais
@@ -133,10 +133,10 @@ As skills do Powertools podem ser usadas de forma independente a qualquer moment
 ## Estrutura
 
 ```
-plughub/
+beta-plugins/
 ├── .claude-plugin/
 │   └── marketplace.json          # Registro dos plugins
-├── spellbook/                    # Plugin: pipeline de desenvolvimento
+├── workflow/                     # Plugin: pipeline de desenvolvimento
 │   ├── .claude-plugin/
 │   │   └── plugin.json
 │   ├── agents/
@@ -148,7 +148,7 @@ plughub/
 │       ├── plan/
 │       ├── execute/
 │       └── review/
-├── powertools/                   # Plugin: utilitários
+├── essentials/                   # Plugin: utilitários
 │   ├── .claude-plugin/
 │   │   └── plugin.json
 │   └── skills/
