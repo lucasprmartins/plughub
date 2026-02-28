@@ -1,5 +1,5 @@
 {
-  "name": "plughub",
+  "name": "beta-plugins",
   "description": "Coleção de plugins com skills, agentes e comandos para Claude Code.",
   "owner": {
     "name": "Lucas Martins",
@@ -7,20 +7,20 @@
   },
   "plugins": [
     {
-      "name": "spellbook",
+      "name": "workflow",
       "description": "Pipeline completo de desenvolvimento: brainstorm, planejamento, execução com subagentes e revisão de código.",
       "version": "1.0.1",
-      "source": "./spellbook/",
+      "source": "./workflow/",
       "author": {
         "name": "Lucas Martins",
         "email": "lucasprmartins@icloud.com"
       }
     },
     {
-      "name": "powertools",
+      "name": "essentials",
       "description": "Coleção de skills utilitárias para produtividade no dia a dia do desenvolvedor.",
       "version": "1.0.1",
-      "source": "./powertools/",
+      "source": "./essentials/",
       "author": {
         "name": "Lucas Martins",
         "email": "lucasprmartins@icloud.com"
