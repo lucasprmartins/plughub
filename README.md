@@ -24,10 +24,10 @@ Pipeline completo de desenvolvimento com orquestração de subagentes.
 
 | Skill | Descrição |
 |-------|-----------|
-| `/brainstorm` | Transforma ideias vagas em especificações detalhadas |
-| `/plan` | Converte especificações em tarefas atômicas e executáveis |
-| `/execute` | Orquestra subagentes `maker` para execução paralela por fases |
-| `/review` | Orquestra subagentes `reviewer` e `fixer` em loop de verificação |
+| `/spec` | Transforma ideias vagas em especificações detalhadas |
+| `/roadmap` | Converte especificações em tarefas atômicas e executáveis |
+| `/build` | Orquestra subagentes `maker` para execução paralela por fases |
+| `/check` | Orquestra subagentes `reviewer` e `fixer` em loop de verificação |
 
 **Subagentes:**
 
@@ -78,21 +78,21 @@ Adicione os caminhos dos plugins no seu arquivo de configuração do Claude Code
 ### Fluxo completo de desenvolvimento
 
 ```
-Ideia → /brainstorm → /plan → /execute → /review → /commit → /pr
+Ideia → /spec → /roadmap → /build → /check → /commit → /pr
 ```
 
 #### 1. Especificar a ideia
 
 ```
-/brainstorm Quero criar um sistema de autenticação com OAuth
+/spec Quero criar um sistema de autenticação com OAuth
 ```
 
-O brainstorm gera uma especificação em `.workflow/specs/`.
+O spec gera uma especificação em `.workflow/specs/`.
 
 #### 2. Planejar a implementação
 
 ```
-/plan
+/roadmap
 ```
 
 Converte a especificação em tarefas atômicas salvas em `.workflow/plans/`.
@@ -100,7 +100,7 @@ Converte a especificação em tarefas atômicas salvas em `.workflow/plans/`.
 #### 3. Executar as tarefas
 
 ```
-/execute
+/build
 ```
 
 Despacha subagentes `maker` que implementam as tarefas em paralelo por fases.
@@ -108,7 +108,7 @@ Despacha subagentes `maker` que implementam as tarefas em paralelo por fases.
 #### 4. Revisar o código
 
 ```
-/review
+/check
 ```
 
 Despacha `reviewer` para verificação técnica e `fixer` para correções automáticas.
@@ -144,10 +144,10 @@ beta-plugins/
 │   │   ├── reviewer.md
 │   │   └── fixer.md
 │   └── skills/
-│       ├── brainstorm/
-│       ├── plan/
-│       ├── execute/
-│       └── review/
+│       ├── spec/
+│       ├── roadmap/
+│       ├── build/
+│       └── check/
 ├── essentials/                   # Plugin: utilitários
 │   ├── .claude-plugin/
 │   │   └── plugin.json
