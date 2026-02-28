@@ -1,0 +1,17 @@
+{
+  "name": "essentials",
+  "description": "Coleção de skills utilitárias para produtividade no dia a dia do desenvolvedor.",
+  "version": "1.0.1",
+  "author": {
+    "name": "Lucas Martins",
+    "email": "lucasprmartins@icloud.com"
+  },
+  "homepage": "https://github.com/lucasprmartins/beta-plugins",
+  "repository": "https://github.com/lucasprmartins/beta-plugins",
+  "mcpServers": {
+    "context7": {
+    "command": "npx",
+    "args": ["-y", "@upstash/context7-mcp"]
+    }
+  }
+}
