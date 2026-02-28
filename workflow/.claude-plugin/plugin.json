@@ -1,0 +1,11 @@
+{
+  "name": "workflow",
+  "description": "Pipeline completo de desenvolvimento: brainstorm, planejamento, execução com subagentes e revisão de código.",
+  "version": "1.0.1",
+  "author": {
+    "name": "Lucas Martins",
+    "email": "lucasprmartins@icloud.com"
+  },
+  "homepage": "https://github.com/lucasprmartins/beta-plugins",
+  "repository": "https://github.com/lucasprmartins/beta-plugins"
+}
