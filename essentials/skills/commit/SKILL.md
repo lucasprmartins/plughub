@@ -2,7 +2,7 @@
 name: commit
 description: Use quando precisar commitar alterações no git de forma atômica. Acionado por pedidos como "commita", "faz commit", "git commit", ou quando há alterações staged/unstaged prontas para serem commitadas.
 model: haiku
-allowed-tools: Bash
+allowed-tools: Bash(git *)
 ---
 
 ## Contexto
@@ -23,12 +23,14 @@ Criar commits git agrupados por unidade lógica, onde cada commit representa UMA
 
 ```bash
 git add <arquivo1> <arquivo2>
-git commit -m "<tipo>: <descrição curta>"
+git commit -m "<tipo>(<escopo>): <descrição curta>"
 ```
 
 ## Instruções
 
 - Execute o processo em **ORDEM SEQUENCIAL**. Não pule etapas ou execute fora de ordem.
+- **SEMPRE** use `git commit -m "mensagem"` com a mensagem direto na flag `-m`.
+- **NUNCA** use `$(cat <<EOF)`, heredoc ou subshell para passar a mensagem.
 - **SEMPRE** especifique arquivos: `git add <arquivo>`
 - **NUNCA** use `git add .` nem `git add -A` — sempre liste os arquivos
 - **NUNCA** use `git add -p` nem `git add -i` — staging é por arquivo
