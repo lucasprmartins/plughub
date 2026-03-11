@@ -4,59 +4,40 @@ description: Use quando precisar criar uma pull request a partir das alteraçõe
 model: haiku
 ---
 
-# Criar Pull Request
-
-## Overview
-
-Workflow para criar pull requests padronizadas como rascunho, com rastreabilidade de task e formato consistente de body.
-
 ## Contexto
-
-Colete o estado atual do repositório:
-
 - Status do Git: !`git status`
 - Diff completo: !`git diff HEAD`
 - Branch atual: !`git branch --show-current`
 
-## Workflow
+## Visão Geral
 
-### 1. Perguntar o Task ID
+Criar pull request padronizada como rascunho e formato consistente de body.
 
-**OBRIGATÓRIO:** Use `AskUserQuestion` para perguntar ao usuário o ID da task relacionada. Nunca invente, assuma ou peça para o usuário "substituir depois".
+## Processo
 
-Exemplo: "Qual o ID da task relacionada a esta PR? (ex: 82)"
-
-O valor será usado no título: `<tipo>: <descrição> [TASK-<id>]`
-
-### 2. Criar branch (se estiver na main)
-
-Se a branch atual for `main`, crie uma nova branch baseada no Task ID:
+1. Criar branch (se estiver na main): Se a branch atual for `main`, crie uma nova branch baseada nas alterações atuais.
 
 ```bash
-git checkout -b TASK-<id>
+git switch -c <nome-da-branch>
 ```
 
-### 3. Commit
-
-Adicione os arquivos e crie um commit com mensagem descritiva:
+2. Faça o commit (caso não tenha feito): Adicione os arquivos e crie um commit com mensagem descritiva.
 
 ```bash
 git add <arquivos relevantes>
-git commit -m "<tipo>: <descrição da alteração>"
+git commit -m "<tipo>(<escopo>): <descrição da alteração>"
 ```
 
-### 4. Push
+3. Faça o push:
 
 ```bash
 git push -u origin <nome-da-branch>
 ```
 
-### 5. Criar a PR como rascunho
-
-**OBRIGATÓRIO: Sempre use `--draft`.** Nunca omita essa flag.
+4. Crie a PR como rascunho:
 
 ```bash
-gh pr create --draft --title "<tipo>: <descrição curta> [TASK-<id>]" --body "$(cat <<'EOF'
+gh pr create --draft --title "<tipo>: <descrição curta>" --body "$(cat <<'EOF'
 ## Resumo
 <texto livre descrevendo o que foi feito e por quê>
 
@@ -74,23 +55,13 @@ EOF
 )"
 ```
 
-### 6. Execução única
+## Instruções
 
-Todas as chamadas de ferramentas devem ser feitas em uma única mensagem. Não envie texto adicional além das chamadas.
+- Execute o processo em **ORDEM SEQUENCIAL**. Não pule etapas ou execute fora de ordem.
+- **SEMPRE** use `--draft`. Nunca omita essa flag.
+- Siga **RIGOROSAMENTE** o formato de título e body. Nunca crie uma PR sem seguir o formato.
+- O título deve ser curto, descritivo e seguir o formato `<tipo>: <descrição>`
 
-### 7. Finalização
+## Saída
 
-Após a criação da PR, informe ao usuário:
-1. Que a PR foi criada com sucesso
-2. O link da PR
-3. Que ela está em modo **rascunho** e precisa ser promovida para review quando estiver pronta
-
-## Erros Comuns
-
-| Erro | Correção |
-|------|----------|
-| Inventar Task ID | **Sempre** perguntar ao usuário com `AskUserQuestion` |
-| Omitir `--draft` | Flag `--draft` é obrigatória em toda PR |
-| Push direto na main | Criar branch `TASK-<id>` antes |
-| Body sem formato padrão | Usar as 4 seções: Resumo, Alterações, Critérios de Verificação, Breaking changes |
-| Enviar várias mensagens | Tudo deve ser feito em uma única resposta |
+Após a conclusão do processo, informe **SOMENTE E EXCLUSIVAMENTE** que a PR foi criada e o link para acesso ao navegador, por exemplo: "A pull request foi criada com sucesso. Acesse: https://github.com/owner/repo/pull/[n]"
