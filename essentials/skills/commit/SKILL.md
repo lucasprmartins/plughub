@@ -2,7 +2,7 @@
 name: commit
 description: Use quando precisar commitar alterações no git de forma atômica. Acionado por pedidos como "commita", "faz commit", "git commit", ou quando há alterações staged/unstaged prontas para serem commitadas.
 model: haiku
-allowed-tools: Bash(git *)
+allowed-tools: Bash
 ---
 
 ## Contexto
