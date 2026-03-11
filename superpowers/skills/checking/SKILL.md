@@ -25,6 +25,7 @@ Revisar e checar código dos arquivos modificados e adicionados para garantir qu
 
 ## Instruções
 
+- Execute o processo em **ORDEM SEQUENCIAL**. Não pule etapas ou execute fora de ordem.
 - **NUNCA** ignorar os problemas encontrados, mesmo que pareçam pequenos ou triviais. Se um problema for identificado, ele deve ser corrigido.
 - Corrija **RIGOROSAMENTE** os problemas de lint e tipagem.
 - Utilize YAGNI (You Aren't Gonna Need It) para evitar a tentação de adicionar detalhes desnecessários na revisão. Concentre-se apenas no que é essencial para resolver a especificação.
