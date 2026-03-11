@@ -29,7 +29,7 @@
     {
       "name": "superpowers",
       "description": "Superpoderes para potencializar seu fluxo de desenvolvimento.",
-      "version": "0.0.7",
+      "version": "0.0.8",
       "source": "./superpowers/",
       "author": {
         "name": "Lucas Martins",
