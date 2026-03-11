@@ -20,14 +20,14 @@
 
 ## Arquitetura
 
-**Abordagem:** [Descrição da abordagem escolhida e por que foi escolhida]
+[Abordagem: Descrição da abordagem escolhida e por que foi escolhida]
 
 **Componentes:**
 - [Componente 1]: [Responsabilidade]
 - [Componente 2]: [Responsabilidade]
 - ...
 
-**Fluxo de Dados:** [Descrição do fluxo principal]
+[Fluxo de Dados: Descrição do fluxo principal]
 
 ---
 
