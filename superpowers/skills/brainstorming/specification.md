@@ -8,11 +8,15 @@
 
 [Contexto: 2-3 frases sobre o problema que resolve]
 
+---
+
 ## Requisitos Funcionais
 
 - [Requisito 1]
 - [Requisito 2]
 - ...
+
+---
 
 ## Arquitetura
 
@@ -25,11 +29,15 @@
 
 **Fluxo de Dados:** [Descrição do fluxo principal]
 
+---
+
 ## Restrições e Decisões
 
 - [Decisão técnica 1 e justificativa]
 - [Restrição 1]
 - ...
+
+---
 
 ## Critérios de Sucesso
 
